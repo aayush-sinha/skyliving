@@ -11,9 +11,17 @@ app.set("view engine", "ejs");
 const PORT = process.env.PORT || 5000
 
 const upload = multer({ dest: __dirname + "/uploads/images" });
-mongoose.set("useNewUrlParser", true);
+// mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
-mongoose.connect("mongodb://localhost/skytest");
+// mongoose.connect("mongodb://localhost/skytest");
+mongoose.connect('mongodb+srv://skylivingweb:Felix2020@@cluster0-jgx9s.mongodb.net/test?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useCreateIndex: true
+}).then(() => {
+  console.log('Connected to DB!');
+}).catch(err => {
+  console.log('ERROR:', err.message);
+});
 var roomSchema = new mongoose.Schema({
   propName: String,
   propLocation: String,

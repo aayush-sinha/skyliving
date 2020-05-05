@@ -8,6 +8,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+const PORT = process.env.PORT || 5000
 
 const upload = multer({ dest: __dirname + "/uploads/images" });
 mongoose.set("useNewUrlParser", true);
@@ -78,6 +79,4 @@ app.get("/admin/rooms/new", function (req, res) {
 });
 
 //App Listen
-app.listen(3000, function () {
-  console.log("Server Started!");
-});
+app.listen(PORT, () => console.log(`Listening on ${PORT}`));

@@ -42,25 +42,27 @@ var roomSchema = new mongoose.Schema({
 });
 var Room = mongoose.model("Room", roomSchema);
 
-Room.find({}, function (err, room) {
-  if (err) {
-    console.log(err);
-  } else {
-    rooms = room;
-  }
-});
+// Room.find({}, function (err, room) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     rooms = room;
+//   }
+// });
 
-Room.count({}, function (err, count) {
-  if (err) {
-    console.log(err);
-  } else {
-    total = count;
-  }
-});
+// Room.count({}, function (err, count) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     total = count;
+//   }
+// });
+
+total = 10;
 
 //App Routes
 app.get("/", function (req, res) {
-  res.render("room", { featured: rooms });
+  res.render("room");
 });
 app.get("/roomlist", function (req, res) {
   res.render("roomlist");

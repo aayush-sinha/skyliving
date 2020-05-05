@@ -22,47 +22,45 @@ mongoose.connect('mongodb+srv://skylivingweb:Felix2020@@cluster0-jgx9s.mongodb.n
 }).catch(err => {
   console.log('ERROR:', err.message);
 });
-// var roomSchema = new mongoose.Schema({
-//   propName: String,
-//   propLocation: String,
-//   propAddress: String,
-//   propSize: Number,
-//   propLat: Number,
-//   propLong: Number,
-//   propRooms: Number,
-//   propOccupancy: Array,
-//   propCooling: Array,
-//   propPrice: Array,
-//   propImgExt: String,
-//   propImg1: String,
-//   propImag2: String,
-//   propImg3: String,
-//   propFeatures: Array,
-//   propDate: { type: Date, default: Date.now },
-// });
-// var Room = mongoose.model("Room", roomSchema);
+var roomSchema = new mongoose.Schema({
+  propName: String,
+  propLocation: String,
+  propAddress: String,
+  propSize: Number,
+  propLat: Number,
+  propLong: Number,
+  propRooms: Number,
+  propOccupancy: Array,
+  propCooling: Array,
+  propPrice: Array,
+  propImgExt: String,
+  propImg1: String,
+  propImag2: String,
+  propImg3: String,
+  propFeatures: Array,
+  propDate: { type: Date, default: Date.now },
+});
+var Room = mongoose.model("Room", roomSchema);
 
-// Room.find({}, function (err, room) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     rooms = room;
-//   }
-// });
+Room.find({}, function (err, room) {
+  if (err) {
+    console.log(err);
+  } else {
+    rooms = room;
+  }
+});
 
-// Room.count({}, function (err, count) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     total = count;
-//   }
-// });
-
-total = 10;
+Room.count({}, function (err, count) {
+  if (err) {
+    console.log(err);
+  } else {
+    total = count;
+  }
+});
 
 //App Routes
 app.get("/", function (req, res) {
-  res.render("room");
+  res.render("home", { featured: rooms });
 });
 app.get("/roomlist", function (req, res) {
   res.render("roomlist");
@@ -87,6 +85,32 @@ app.get("/admin/rooms", function (req, res) {
 app.get("/admin/rooms/new", function (req, res) {
   res.render("admin_room_new", { topbarHeading: "Add New Property" });
 });
+
+app.post("/createRooms", upload.fields([
+  { name: 'propImgExt', maxCount: 1 },
+  { name: 'propImg1', maxCount: 1 },
+  { name: 'propImg2', maxCount: 1 },
+  { name: 'propImg3', maxCount: 1 }
+]), function (req, res) {
+  Room.create({
+    propName: req.body.propName,
+    propLocation: req.body.propLocation,
+    propAddress: req.body.propAddress,
+    propSize: req.body.propSize,
+    propLat: req.body.propLat,
+    propLong: req.body.propLong,
+    propRooms: req.body.propRooms,
+    propOccupancy: req.body.propOccupancy,
+    propCooling: req.body.propCooling,
+    propPrice: req.body.propPrice,
+    propImgExt: req.files.propImgExt[0].filename,
+    propImg1: req.files.propImg1[0].filename,
+    propImag2: req.files.propImg2[0].filename,
+    propImg3: req.files.propImg3[0].filename,
+    propFeatures: req.body.propFeatures
+  });
+  res.render("/admin/rooms/new");
+})
 
 //App Listen
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

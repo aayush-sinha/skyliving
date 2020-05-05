@@ -1,0 +1,125 @@
+<%- include("partials/admin_header")  %>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <form action="/createRooms" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="propertyName">Name:</label>
+            <input type="text" class="form-control" id="propertyName" placeholder="Enter name" name="propName"
+                required />
+        </div>
+
+        <div class="row">
+            <div class="form-group col">
+                <label for="exampleFormControlSelect1">Location</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="propLocation">
+                    <option>Law Gate</option>
+                    <option>Phagwara</option>
+                    <option>Jalandhar Cantt</option>
+                    <option>Rama Mandi</option>
+                </select>
+            </div>
+            <div class="form-group col">
+                <label for="propAddress">Address:</label>
+                <input type="text" class="form-control" id="propAddress" placeholder="Enter address" name="propAddress"
+                    required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col">
+                <label for="propSize">Size:</label>
+                <input type="text" class="form-control" id="propSize" placeholder="Enter Size in m^2" name="propSize"
+                    required />
+            </div>
+            <div class="form-group col">
+                <label for="propLat">Latitude:</label>
+                <input type="text" class="form-control" id="propLat" placeholder="Enter address" name="propLat"
+                    required />
+            </div>
+            <div class="form-group col">
+                <label for="propLong">Longitude:</label>
+                <input type="text" class="form-control" id="propLong" placeholder="Enter address" name="propLong"
+                    required />
+            </div>
+            <div class="form-group col">
+                <label for="propRooms">Rooms:</label>
+                <input type="text" class="form-control" id="propRooms" placeholder="Available" name="propRooms"
+                    required />
+            </div>
+        </div>
+        <h4 style="margin-top: 20px;">Price Categories</h4>
+        <div id="priceCategories" style="margin-bottom: 20px;">
+            <div class="row border border-info">
+                <div class="form-group col">
+                    <label for="propOccupancy">Occupancy Type</label>
+                    <select class="form-control" id="propOccupancy" name="propOccupancy">
+                        <option>1 seater</option>
+                        <option>2 seater</option>
+                        <option>3 seater</option>
+                    </select>
+                </div>
+                <div class="form-group col">
+                    <label for="propCooling">Cooling Type</label>
+                    <select class="form-control" id="propCooling" name="propCooling">
+                        <option>AC</option>
+                        <option>Non AC</option>
+                    </select>
+                </div>
+                <div class="form-group col">
+                    <label for="propPrice">Price:</label>
+                    <input type="text" class="form-control" id="propPrice" placeholder="Enter Price" name="propPrice"
+                        required />
+                </div>
+
+                <div class="btn-group mr-2">
+                    <button type="button" class="btn btn-primary" id="addButton" onclick="addHandler()">
+                        +
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propLong">External Image:</label>
+            <input type="file" class="form-control" id="propImgExt" placeholder="Enter Price" name="propImgExt"
+                required />
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label for="propLong">Internal Image 1:</label>
+                <input type="file" class="form-control" id="propImg1" accept="image/*" placeholder="Enter Price"
+                    name="propImg1" required />
+            </div>
+            <div class="form-group col">
+                <label for="propLong">Internal Image 2:</label>
+                <input type="file" class="form-control" id="ppropImg2" accept="image/*" placeholder="Enter Price"
+                    name="propImg2" required />
+            </div>
+            <div class="form-group col">
+                <label for="propLong">Internal Image 3:</label>
+                <input type="file" class="form-control" id="propImg3" accept="image/*" placeholder="Enter Price"
+                    name="propImg3" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Features (Select Multiple)</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2" name="propFeatures">
+                <option>Wifi</option>
+                <option>Fridge</option>
+                <option>Mattress</option>
+                <option>TV</option>
+                <option>Geyser</option>
+                <option>Parking</option>
+                <option>CCTV</option>
+                <option>Power Backup</option>
+            </select>
+        </div>
+
+        <input type="submit" value="submit" />
+    </form>
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
+<%- include("partials/admin_footer")  %>

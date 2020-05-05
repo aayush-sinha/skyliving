@@ -60,7 +60,7 @@ Room.count({}, function (err, count) {
 
 //App Routes
 app.get("/", function (req, res) {
-  res.render("home", { featured: rooms });
+  res.render("room", { featured: rooms });
 });
 app.get("/roomlist", function (req, res) {
   res.render("roomlist");

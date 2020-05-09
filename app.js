@@ -2,15 +2,14 @@ var express = require("express"),
   bodyParser = require("body-parser"),
   multer = require("multer"),
   mongoose = require("mongoose");
-
+// alertify = require("alertifyjs");
 //App Setting
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-const PORT = process.env.PORT || 5000
-
-const upload = multer({ dest: __dirname + "/uploads/images" });
+const PORT = process.env.PORT || 3000;
+const upload = multer({ dest: __dirname + "/public/uploads/images" });
 // mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
 // mongoose.connect("mongodb://localhost/skytest");
@@ -42,15 +41,7 @@ var roomSchema = new mongoose.Schema({
 });
 var Room = mongoose.model("Room", roomSchema);
 
-Room.find({}, function (err, room) {
-  if (err) {
-    console.log(err);
-  } else {
-    rooms = room;
-  }
-});
-
-Room.count({}, function (err, count) {
+Room.countDocuments({}, function (err, count) {
   if (err) {
     console.log(err);
   } else {
@@ -60,7 +51,14 @@ Room.count({}, function (err, count) {
 
 //App Routes
 app.get("/", function (req, res) {
-  res.render("home", { featured: rooms });
+  Room.find({}, function (err, room) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("home", { featured: room });
+    }
+  });
+
 });
 app.get("/roomlist", function (req, res) {
   res.render("roomlist");
@@ -77,7 +75,14 @@ app.get("/admin", function (req, res) {
 });
 //Index Rooms
 app.get("/admin/rooms", function (req, res) {
-  res.render("admin_room_index", { topbarHeading: "Property List", rooms: rooms });
+  Room.find({}, function (err, room) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("admin_room_index", { topbarHeading: "Property List", rooms: room });
+    }
+  });
+
 });
 
 // New Route
@@ -109,7 +114,7 @@ app.post("/createRooms", upload.fields([
     propImg3: req.files.propImg3[0].filename,
     propFeatures: req.body.propFeatures
   });
-  res.render("/admin/rooms/new");
+  res.render("admin_room_new", { topbarHeading: "Add New Property" })
 })
 
 //App Listen

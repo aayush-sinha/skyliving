@@ -4,14 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
-  <link rel="stylesheet" href="/room/css/style.css">
   <link rel="shortcut icon" type="image/png" href="/room/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="/room/css/reset.css">
+  <link rel="stylesheet" href="/room/css/price.css">
+  <link rel="stylesheet" href="/room/css/style.css">
+  <script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+
 
   <title>trillo &mdash; Your all-in-one booking app</title>
 </head>
 
 <body>
+
   <div class="container">
     <div class="content">
 
@@ -67,6 +73,148 @@
           </div>
         </div>
 
+        <div class="price-body">
+
+
+          <div class="cd-pricing-container cd-full-width cd-secondary-theme">
+            <div class="cd-pricing-switcher">
+              <p class="fieldset">
+                <input type="radio" name="duration" value="monthly" id="monthly" checked>
+                <label for="monthly">A/C</label>
+                <input type="radio" name="duration" value="yearly" id="yearly">
+                <label for="yearly">Non A/C</label>
+                <span class="cd-switch"></span>
+              </p>
+            </div> <!-- .cd-pricing-switcher -->
+
+            <ul class="cd-pricing-list cd-bounce-invert">
+              <li>
+                <ul class="cd-pricing-wrapper">
+                  <li data-type="monthly" class="is-visible">
+                    <header class="cd-pricing-header">
+                      <h2>1 Seater</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">₹</span>
+                        <span class="cd-value">3000</span>
+                        <span class="cd-duration">month</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+
+                  <li data-type="yearly" class="is-hidden">
+                    <header class="cd-pricing-header">
+                      <h2>1 Seater</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">₹</span>
+                        <span class="cd-value">3200</span>
+                        <span class="cd-duration">month</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+                </ul> <!-- .cd-pricing-wrapper -->
+              </li>
+
+              <li>
+                <ul class="cd-pricing-wrapper">
+                  <li data-type="monthly" class="is-visible">
+                    <header class="cd-pricing-header">
+                      <h2>2 Seater</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">₹</span>
+                        <span class="cd-value">6000</span>
+                        <span class="cd-duration">month</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+
+                  <li data-type="yearly" class="is-hidden">
+                    <header class="cd-pricing-header">
+                      <h2>2 Seater</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">₹</span>
+                        <span class="cd-value">6300</span>
+                        <span class="cd-duration">month</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+                </ul>
+              </li> <!-- .cd-pricing-wrapper -->
+
+              <li>
+                <ul class="cd-pricing-wrapper">
+                  <li data-type="monthly" class="is-visible">
+                    <header class="cd-pricing-header">
+                      <h2>3 Seater</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">₹</span>
+                        <span class="cd-value">9000</span>
+                        <span class="cd-duration">month</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+
+                  <li data-type="yearly" class="is-hidden">
+                    <header class="cd-pricing-header">
+                      <h2>3 Seater</h2>
+
+                      <div class="cd-price">
+                        <span class="cd-currency">₹</span>
+                        <span class="cd-value">9500</span>
+                        <span class="cd-duration">month</span>
+                      </div>
+                    </header> <!-- .cd-pricing-header -->
+
+
+
+                    <footer class="cd-pricing-footer">
+                      <a class="cd-select" href="#">Select</a>
+                    </footer> <!-- .cd-pricing-footer -->
+                  </li>
+                </ul> <!-- .cd-pricing-wrapper -->
+              </li>
+            </ul> <!-- .cd-pricing-list -->
+          </div> <!-- .cd-pricing-container -->
+
+
+
+
+        </div>
+
+
         <div class="detail">
           <div class="description">
             <p class="paragraph">
@@ -102,7 +250,7 @@
 
         <div class="cta">
           <h2 class="cta__book-now">
-            Good news! We have 4 free rooms for your selected dates!
+            Good news! We have 4 rooms available.
           </h2>
           <button class="btn">
             <span class="btn__visible">Book now</span>
@@ -198,6 +346,8 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbMWG-1LdPk_BZVkvByj4I-faWDKU8Db0&callback=initMap">
     </script>
+  <script src="/room/js/jquery-2.1.1.js"></script>
+  <script src="/room/js/main.js"></script>
 </body>
 
 </html>

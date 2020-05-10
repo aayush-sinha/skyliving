@@ -115,6 +115,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  @media only screen and (max-width: 56.25em) {
+    .user-reviews {
+      padding: 2rem;
+      margin-right: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .user-reviews {
+      margin-right: 0;
+      margin-bottom: 3rem; } }
 
 .logo {
   height: 3.25rem;

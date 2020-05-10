@@ -1,227 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
-        <link rel="stylesheet" href="/roomlist/css/style.css">
-        <link rel="stylesheet" href="/roomlist/css/nav.css">
-        <link rel="stylesheet" href="/roomlist/css/checkbox.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-        <link rel="shortcut icon" type="image/png" href="//roomlist/img/favicon.png">
-        
-        <title>SkyLivings &mdash; your home, your freedom</title>
-    </head>
-    <body>
-        <header class="header">
-            <img src="/roomlist/img/logo.png" alt="trillo logo" class="logo-top">
 
-            <form action="#" class="search">
-                <input type="text" class="search__input" placeholder="Search hotels">
-                <button class="search__button">
-                    <svg class="search__icon">
-                        <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
-                    </svg>
-                </button>
-            </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-            <nav class="user-nav">
-                <div class="user-nav__icon-box">
-                    <svg class="user-nav__icon">
-                        <use xlink:href="img/sprite.svg#icon-bookmark"></use>
-                    </svg>
-                    <span class="user-nav__notification">7</span>
-                </div>
-                <div class="user-nav__icon-box">
-                    <svg class="user-nav__icon">
-                        <use xlink:href="img/sprite.svg#icon-chat"></use>
-                    </svg>
-                    <span class="user-nav__notification">13</span>
-                </div>
-                <div class="user-nav__user">
-                    <img src="/roomlist/img/user.jpg" alt="User photo" class="user-nav__user-photo">
-                    <span class="user-nav__user-name">Jonas</span>
-                </div>
-            </nav>
-        </header>
-        <div class="container">
-            
-        <div class="sidebar" >
-        <nav class="navbar" >
-            <ul class="navbar-nav">
-              <li class="logo">
-                <a href="#" class="nav-link">
-                  <span class="link-text logo-text">Apply Filter</span>
-                  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
-               <path fill="currentColor" class="fa-primary" d="M214.71,306.106v197.626c0,6.139,6.46,10.132,11.951,7.386l61.5-30.75
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+    <link rel="stylesheet" href="/roomlist/css/style.css">
+    <link rel="stylesheet" href="/roomlist/css/nav.css">
+    <link rel="stylesheet" href="/roomlist/css/checkbox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="shortcut icon" type="image/png" href="//roomlist/img/favicon.png">
+
+    <title>SkyLivings &mdash; your home, your freedom</title>
+</head>
+
+<body>
+    <header class="header">
+        <img src="/roomlist/img/logo.png" alt="trillo logo" class="logo-top">
+
+        <form action="#" class="search">
+            <input type="text" class="search__input" placeholder="Search hotels">
+            <button class="search__button">
+                <svg class="search__icon">
+                    <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+                </svg>
+            </button>
+        </form>
+
+        <nav class="user-nav">
+            <div class="user-nav__icon-box">
+                <svg class="user-nav__icon">
+                    <use xlink:href="img/sprite.svg#icon-bookmark"></use>
+                </svg>
+                <span class="user-nav__notification">7</span>
+            </div>
+            <div class="user-nav__icon-box">
+                <svg class="user-nav__icon">
+                    <use xlink:href="img/sprite.svg#icon-chat"></use>
+                </svg>
+                <span class="user-nav__notification">13</span>
+            </div>
+            <div class="user-nav__user">
+                <img src="data:image/png;base64,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"
+                    alt="User photo" class="user-nav__user-photo">
+                <span class="user-nav__user-name">Aayush</span>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+
+        <div class="sidebar">
+            <nav class="navbar">
+                <ul class="navbar-nav">
+                    <li class="logo">
+                        <a href="#" class="nav-link">
+                            <span class="link-text logo-text">Apply Filter</span>
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001"
+                                style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                                <path fill="currentColor" class="fa-primary" d="M214.71,306.106v197.626c0,6.139,6.46,10.132,11.951,7.386l61.5-30.75
                    c5.595-2.798,9.13-8.517,9.13-14.772v-159.49c0-5.702,1.967-11.229,5.568-15.649L473.4,81.157c3.602-4.42,5.568-9.947,5.568-15.649
                    V16.516C478.968,7.395,471.573,0,462.452,0H49.548c-9.122,0-16.516,7.395-16.516,16.516v48.991c0,5.702,1.967,11.229,5.568,15.649
-                   l170.541,209.3C212.743,294.877,214.71,300.404,214.71,306.106z"/>
-               <path fill="currentColor" class="fa-secondary" d="M404.355,66.065H198.194c-4.561,0-8.258-3.697-8.258-8.258V0H49.548
+                   l170.541,209.3C212.743,294.877,214.71,300.404,214.71,306.106z" />
+                                <path fill="currentColor" class="fa-secondary" d="M404.355,66.065H198.194c-4.561,0-8.258-3.697-8.258-8.258V0H49.548
                    c-9.122,0-16.516,7.395-16.516,16.516v48.991c0,5.702,1.967,11.229,5.568,15.649l170.541,209.3c3.602,4.42,5.569,9.948,5.569,15.65
                    v197.625c0,6.139,6.46,10.132,11.951,7.386l17.105-8.552V305.548c0-4.561,3.697-8.258,8.258-8.258h11.74
-                   c5.474,0,10.593-2.712,13.667-7.242L415.346,86.804C421.33,77.985,415.013,66.065,404.355,66.065z"/>
-               
-               
-               </svg>
-                </a>
-              </li>
-        
-              <li class="nav-item">
-                <a href="#" class="nav-link" onclick="myFunction('priceDiv')">
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-               <path fill="currentColor" class="fa-primary" d="M257,0C116.302,0,0,114.3,0,255s116.302,257,257,257s255-116.3,255-257S397.698,0,257,0z"/>
-               <path fill="currentColor" class="fa-primary" d="M512,255c0,140.7-114.302,257-255,257V0C397.698,0,512,114.3,512,255z"/>
-               <path fill="currentColor" class="fa-secondary" d="M257,60C149.598,60,60,147.599,60,255s89.598,197,197,197s195-89.599,195-197S364.402,60,257,60z"/>
-               <path fill="currentColor" class="fa-secondary" d="M452,255c0,107.401-87.598,197-195,197V60C364.402,60,452,147.599,452,255z"/>
-               <path fill="currentColor" class="fa-primary" d="M287,240h-15v-60h15c8.401,0,15,6.599,15,15c0,19.799,30,19.799,30,0c0-24.901-20.098-45-45-45h-15
+                   c5.474,0,10.593-2.712,13.667-7.242L415.346,86.804C421.33,77.985,415.013,66.065,404.355,66.065z" />
+
+
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="myFunction('priceDiv')">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                                style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <path fill="currentColor" class="fa-primary"
+                                    d="M257,0C116.302,0,0,114.3,0,255s116.302,257,257,257s255-116.3,255-257S397.698,0,257,0z" />
+                                <path fill="currentColor" class="fa-primary"
+                                    d="M512,255c0,140.7-114.302,257-255,257V0C397.698,0,512,114.3,512,255z" />
+                                <path fill="currentColor" class="fa-secondary"
+                                    d="M257,60C149.598,60,60,147.599,60,255s89.598,197,197,197s195-89.599,195-197S364.402,60,257,60z" />
+                                <path fill="currentColor" class="fa-secondary"
+                                    d="M452,255c0,107.401-87.598,197-195,197V60C364.402,60,452,147.599,452,255z" />
+                                <path fill="currentColor" class="fa-primary" d="M287,240h-15v-60h15c8.401,0,15,6.599,15,15c0,19.799,30,19.799,30,0c0-24.901-20.098-45-45-45h-15
                    v-15c0-9.901-7.5-15-15-15s-15,5.099-15,15v15h-17c-24.902,0-45,20.099-45,45v30c0,24.901,20.098,45,45,45h17v62h-17
                    c-8.401,0-15-6.599-15-15c0-19.799-30-19.799-30,0c0,24.901,20.098,45,45,45h17v15c0,9.901,7.5,15,15,15s15-5.099,15-15v-15h15
                    c24.902,0,45-20.099,45-45v-32C332,260.099,311.902,240,287,240z M242,240h-17c-8.401,0-15-6.599-15-15v-30c0-8.401,6.599-15,15-15
-                   h17V240z M302,317c0,8.401-6.599,15-15,15h-15v-62h15c8.401,0,15,6.599,15,15V317z"/>
-               <path fill="currentColor" class="fa-primary" d="M287,240h-15v-60h15c8.401,0,15,6.599,15,15c0,19.799,30,19.799,30,0c0-24.901-20.098-45-45-45h-15
+                   h17V240z M302,317c0,8.401-6.599,15-15,15h-15v-62h15c8.401,0,15,6.599,15,15V317z" />
+                                <path fill="currentColor" class="fa-primary" d="M287,240h-15v-60h15c8.401,0,15,6.599,15,15c0,19.799,30,19.799,30,0c0-24.901-20.098-45-45-45h-15
                    v-15c0-9.901-7.5-15-15-15v272c7.5,0,15-5.099,15-15v-15h15c24.902,0,45-20.099,45-45v-32C332,260.099,311.902,240,287,240z
-                    M302,317c0,8.401-6.599,15-15,15h-15v-62h15c8.401,0,15,6.599,15,15V317z"/>
-               </svg>
-               
-                  <span class="link-text">Price</span>
-                  <span id="priceDivA" class="darrow">
-                    <svg  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 49.656 49.656" style="enable-background:new 0 0 49.656 49.656;" xml:space="preserve">
-               <g>
-                   <polygon fill="currentColor" class="fa-primary" points="1.414,14.535 4.242,11.707 24.828,32.292 45.414,11.707 48.242,14.535 24.828,37.95 	"/>
-                   <path fill="currentColor" class="fa-primary" d="M24.828,39.364L0,14.536l4.242-4.242l20.586,20.585l20.586-20.586l4.242,4.242L24.828,39.364z
-                        M2.828,14.536l22,22l22-22.001l-1.414-1.414L24.828,33.707L4.242,13.122L2.828,14.536z"/>
-               </g>
-               </svg>
-               
-                </span>
-                </a>
-              </li>
-              <div style="display: none;" class="boxes" id="priceDiv" >
-                <input type="checkbox" id="box-1-1">
-                <label for="box-1-1">under 5000</label>
-              
-                <input type="checkbox" id="box-1-2" >
-                <label for="box-1-2">between 5000 to 10000</label>
-              
-                <input type="checkbox" id="box-1-3">
-                <label for="box-1-3">above 10000</label>
-              </div>
-        
-              <li class="nav-item">
-                <a href="#" class="nav-link" onclick="myFunction('occupancyDiv')">
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 482.924 482.924" style="enable-background:new 0 0 482.924 482.924;" xml:space="preserve">
-	<path fill="currentColor" class="fa-secondary" d="M54.979,180.626c0-25.204,20.505-45.71,45.71-45.71h102.608c15.933,0,29.981,8.2,38.165,20.595
+                    M302,317c0,8.401-6.599,15-15,15h-15v-62h15c8.401,0,15,6.599,15,15V317z" />
+                            </svg>
+
+                            <span class="link-text">Price</span>
+                            <span id="priceDivA" class="darrow">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 49.656 49.656" style="enable-background:new 0 0 49.656 49.656;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <polygon fill="currentColor" class="fa-primary"
+                                            points="1.414,14.535 4.242,11.707 24.828,32.292 45.414,11.707 48.242,14.535 24.828,37.95 	" />
+                                        <path fill="currentColor" class="fa-primary" d="M24.828,39.364L0,14.536l4.242-4.242l20.586,20.585l20.586-20.586l4.242,4.242L24.828,39.364z
+                        M2.828,14.536l22,22l22-22.001l-1.414-1.414L24.828,33.707L4.242,13.122L2.828,14.536z" />
+                                    </g>
+                                </svg>
+
+                            </span>
+                        </a>
+                    </li>
+                    <div style="display: none;" class="boxes" id="priceDiv">
+                        <input type="checkbox" id="box-1-1">
+                        <label for="box-1-1">under 5000</label>
+
+                        <input type="checkbox" id="box-1-2">
+                        <label for="box-1-2">between 5000 to 10000</label>
+
+                        <input type="checkbox" id="box-1-3">
+                        <label for="box-1-3">above 10000</label>
+                    </div>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="myFunction('occupancyDiv')">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 482.924 482.924"
+                                style="enable-background:new 0 0 482.924 482.924;" xml:space="preserve">
+                                <path fill="currentColor" class="fa-secondary" d="M54.979,180.626c0-25.204,20.505-45.71,45.71-45.71h102.608c15.933,0,29.981,8.2,38.165,20.595
 		c8.185-12.396,22.232-20.595,38.165-20.595h102.609c25.204,0,45.709,20.506,45.709,45.71v2.105h11.443v-44.574
-		c0-27.66-22.503-50.163-50.163-50.163H93.698c-27.66,0-50.163,22.503-50.163,50.163v44.574h11.443V180.626z"/>
-	<path fill="currentColor" class="fa-secondary" d="M463.712,204.076H19.211C8.618,204.076,0,212.694,0,223.287v111.524c0,10.593,8.618,19.211,19.211,19.211h7.997
+		c0-27.66-22.503-50.163-50.163-50.163H93.698c-27.66,0-50.163,22.503-50.163,50.163v44.574h11.443V180.626z" />
+                                <path fill="currentColor" class="fa-secondary" d="M463.712,204.076H19.211C8.618,204.076,0,212.694,0,223.287v111.524c0,10.593,8.618,19.211,19.211,19.211h7.997
 		l-9.449,26.668c-1.969,5.556,0.94,11.656,6.495,13.624c1.179,0.417,2.382,0.616,3.565,0.616c4.393,0,8.509-2.734,10.06-7.112
 		l11.975-33.797h383.216l11.975,33.797c1.551,4.378,5.666,7.112,10.06,7.112c1.183,0,2.386-0.199,3.565-0.616
 		c5.556-1.969,8.464-8.069,6.495-13.624l-9.449-26.668h7.997c10.593,0,19.211-8.618,19.211-19.211V223.287
-		C482.924,212.694,474.306,204.076,463.712,204.076z"/>
-	<path fill="currentColor" class="fa-primary" d="M279.627,156.262c-13.434,0-24.364,10.929-24.364,24.363v2.105h151.336v-2.105c0-13.434-10.929-24.363-24.363-24.363
-		H279.627z"/>
-	<path fill="currentColor" class="fa-primary" d="M100.689,156.262c-13.435,0-24.364,10.93-24.364,24.364v2.104h151.336v-2.105c0-13.434-10.929-24.363-24.364-24.363
-		H100.689z"/>
-</svg>
+		C482.924,212.694,474.306,204.076,463.712,204.076z" />
+                                <path fill="currentColor" class="fa-primary" d="M279.627,156.262c-13.434,0-24.364,10.929-24.364,24.363v2.105h151.336v-2.105c0-13.434-10.929-24.363-24.363-24.363
+		H279.627z" />
+                                <path fill="currentColor" class="fa-primary" d="M100.689,156.262c-13.435,0-24.364,10.93-24.364,24.364v2.104h151.336v-2.105c0-13.434-10.929-24.363-24.364-24.363
+		H100.689z" />
+                            </svg>
 
-                  <span class="link-text">Occupancy</span>
-                  <span id="occupancyDivA" class="darrow">
-                    <svg  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 49.656 49.656" style="enable-background:new 0 0 49.656 49.656;" xml:space="preserve">
-               <g>
-                   <polygon fill="currentColor" class="fa-primary" points="1.414,14.535 4.242,11.707 24.828,32.292 45.414,11.707 48.242,14.535 24.828,37.95 	"/>
-                   <path fill="currentColor" class="fa-primary" d="M24.828,39.364L0,14.536l4.242-4.242l20.586,20.585l20.586-20.586l4.242,4.242L24.828,39.364z
-                        M2.828,14.536l22,22l22-22.001l-1.414-1.414L24.828,33.707L4.242,13.122L2.828,14.536z"/>
-               </g>
-               </svg>
-               
-                </span>
-                </a>
-              </li>
-              <div style="display: none;" class="boxes" id="occupancyDiv" >
-                <input type="checkbox" id="box-2-1">
-                <label for="box-2-1">Single Bed</label>
-              
-                <input type="checkbox" id="box-2-2" >
-                <label for="box-2-2">Double Bed</label>
-              
-                <input type="checkbox" id="box-2-3">
-                <label for="box-2-3">Triple Bed</label>
-              </div>
-        
-              <li class="nav-item">
-                <a href="#" class="nav-link" onclick="myFunction('locationDiv')">
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<path fill="currentColor" class="fa-primary" d="M256,0C156.698,0,76,80.7,76,180c0,33.6,9.302,66.301,27.001,94.501l140.797,230.414
+                            <span class="link-text">Occupancy</span>
+                            <span id="occupancyDivA" class="darrow">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 49.656 49.656" style="enable-background:new 0 0 49.656 49.656;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <polygon fill="currentColor" class="fa-primary"
+                                            points="1.414,14.535 4.242,11.707 24.828,32.292 45.414,11.707 48.242,14.535 24.828,37.95 	" />
+                                        <path fill="currentColor" class="fa-primary" d="M24.828,39.364L0,14.536l4.242-4.242l20.586,20.585l20.586-20.586l4.242,4.242L24.828,39.364z
+                        M2.828,14.536l22,22l22-22.001l-1.414-1.414L24.828,33.707L4.242,13.122L2.828,14.536z" />
+                                    </g>
+                                </svg>
+
+                            </span>
+                        </a>
+                    </li>
+                    <div style="display: none;" class="boxes" id="occupancyDiv">
+                        <input type="checkbox" id="box-2-1">
+                        <label for="box-2-1">Single Bed</label>
+
+                        <input type="checkbox" id="box-2-2">
+                        <label for="box-2-2">Double Bed</label>
+
+                        <input type="checkbox" id="box-2-3">
+                        <label for="box-2-3">Triple Bed</label>
+                    </div>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="myFunction('locationDiv')">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                                style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <path fill="currentColor" class="fa-primary" d="M256,0C156.698,0,76,80.7,76,180c0,33.6,9.302,66.301,27.001,94.501l140.797,230.414
 	c2.402,3.9,6.002,6.301,10.203,6.901c5.698,0.899,12.001-1.5,15.3-7.2l141.2-232.516C427.299,244.501,436,212.401,436,180
 	C436,80.7,355.302,0,256,0z M256,270c-50.398,0-90-40.8-90-90c0-49.501,40.499-90,90-90s90,40.499,90,90
-	C346,228.9,306.999,270,256,270z"/>
-<path fill="currentColor" class="fa-secondary" d="M256,0v90c49.501,0,90,40.499,90,90c0,48.9-39.001,90-90,90v241.991
-	c5.119,0.119,10.383-2.335,13.3-7.375L410.5,272.1c16.799-27.599,25.5-59.699,25.5-92.1C436,80.7,355.302,0,256,0z"/>
-</svg>
-                  <span class="link-text">Location</span>
-                  <span id="locationDivA" class="darrow">
-                    <svg  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 49.656 49.656" style="enable-background:new 0 0 49.656 49.656;" xml:space="preserve">
-               <g>
-                   <polygon fill="currentColor" class="fa-primary" points="1.414,14.535 4.242,11.707 24.828,32.292 45.414,11.707 48.242,14.535 24.828,37.95 	"/>
-                   <path fill="currentColor" class="fa-primary" d="M24.828,39.364L0,14.536l4.242-4.242l20.586,20.585l20.586-20.586l4.242,4.242L24.828,39.364z
-                        M2.828,14.536l22,22l22-22.001l-1.414-1.414L24.828,33.707L4.242,13.122L2.828,14.536z"/>
-               </g>
-               </svg>
-               
-                </span>
-                </a>
-              </li>
-              <div style="display: none;" class="boxes" id="locationDiv" >
-                <input type="checkbox" id="box-3-1">
-                <label for="box-3-1">Law Gate</label>
-              
-                <input type="checkbox" id="box-3-2">
-                <label for="box-3-2">Phagwara</label>
-              
-                <input type="checkbox" id="box-3-3">
-                <label for="box-3-3">Rama Mandi</label>
-              </div>
-              <li class="nav-item">
-                <a href="#" class="nav-link" onclick="myFunction('airDiv')">
-                    <svg height="512" viewBox="0 0 16 16" width="512" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="currentColor" class="fa-secondary" d="m14.2847 4.73291c-.586426-.525879-1.28516-.770508-2.02441-.711426-.481811.0396118-1.07214.274841-1.63989.61969.800293-1.17407 1.39429-2.40759 1.39429-3.04254 0-.350098-.137695-.668945-.397461-.921875-.631348-.614746-1.7998-.676758-2.44922-.661621-1.36523.0361329-3.34717.51123-4.44043 1.72998-.525396.585449-.770996 1.28467-.710449 2.02197.0394898.47998.27356 1.06757.616699 1.63336-1.17126-.797058-2.3999-1.38776-3.0332-1.38776-.350098 0-.668945.137695-.921875.397461-.615234.631836-.678711 1.80566-.661621 2.44922.0361328 1.36523.51123 3.34717 1.72998 4.44043.527344.473145 1.14697.719238 1.80322.719238.0727539 0 .145508-.0029297.21875-.0087891.481872-.0396118 1.0722-.275085 1.64001-.620483-.797058 1.17242-1.38806 2.40302-1.38806 3.03699 0 .350098.137695.669434.397949.922852.577148.562012 1.60693.662598 2.26953.662598.0620117 0 .120605-.0004883.175293-.0019531 1.36133-.0361328 3.33837-.510254 4.43066-1.72754.525879-.586426.771484-1.28613.711426-2.02441-.0397949-.483704-.276306-1.07672-.623413-1.64655 1.17523.800293 2.41058 1.39459 3.04626 1.39459.350098 0 .669434-.137695.922852-.397949.614258-.630859.677734-1.80273.660645-2.44482-.0361328-1.36133-.510254-3.33838-1.72754-4.43066zm-6.27002 5.77979c-1.38074 0-2.5-1.11932-2.5-2.5 0-1.38074 1.11926-2.5 2.5-2.5s2.5 1.11926 2.5 2.5c0 1.38068-1.11926 2.5-2.5 2.5z" transform="translate(-.015 -.013)"/>
-                        <path fill="currentColor" class="fa-primary" d="m1.80474.390524c.390524.390524.390524 1.02369 0 1.41421-.390524.390524-1.02369.390524-1.41421 0-.390524-.390524-.390524-1.02369 0-1.41421.390524-.390524 1.02369-.390524 1.41421 0" transform="translate(6.902 6.902)"/>
-                    </svg>
-                  <span class="link-text">Cooling Type</span>
-                  <span id="airDivA" class="darrow">
-                    <svg  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 49.656 49.656" style="enable-background:new 0 0 49.656 49.656;" xml:space="preserve">
-               <g>
-                   <polygon fill="currentColor" class="fa-primary" points="1.414,14.535 4.242,11.707 24.828,32.292 45.414,11.707 48.242,14.535 24.828,37.95 	"/>
-                   <path fill="currentColor" class="fa-primary" d="M24.828,39.364L0,14.536l4.242-4.242l20.586,20.585l20.586-20.586l4.242,4.242L24.828,39.364z
-                        M2.828,14.536l22,22l22-22.001l-1.414-1.414L24.828,33.707L4.242,13.122L2.828,14.536z"/>
-               </g>
-               </svg>
-               
-                </span>
-                </a>
-              </li>  
-              <div style="display: none;" class="boxes" id="airDiv" >
-                <input type="checkbox" id="box-4-1">
-                <label for="box-4-1">Air Cooler</label>
-              
-                <input type="checkbox" id="box-4-2" >
-                <label for="box-4-2">Air Conditioned</label>
-              </div>
-            </ul>
-          </nav>
+	C346,228.9,306.999,270,256,270z" />
+                                <path fill="currentColor" class="fa-secondary" d="M256,0v90c49.501,0,90,40.499,90,90c0,48.9-39.001,90-90,90v241.991
+	c5.119,0.119,10.383-2.335,13.3-7.375L410.5,272.1c16.799-27.599,25.5-59.699,25.5-92.1C436,80.7,355.302,0,256,0z" />
+                            </svg>
+                            <span class="link-text">Location</span>
+                            <span id="locationDivA" class="darrow">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 49.656 49.656" style="enable-background:new 0 0 49.656 49.656;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <polygon fill="currentColor" class="fa-primary"
+                                            points="1.414,14.535 4.242,11.707 24.828,32.292 45.414,11.707 48.242,14.535 24.828,37.95 	" />
+                                        <path fill="currentColor" class="fa-primary" d="M24.828,39.364L0,14.536l4.242-4.242l20.586,20.585l20.586-20.586l4.242,4.242L24.828,39.364z
+                        M2.828,14.536l22,22l22-22.001l-1.414-1.414L24.828,33.707L4.242,13.122L2.828,14.536z" />
+                                    </g>
+                                </svg>
+
+                            </span>
+                        </a>
+                    </li>
+                    <div style="display: none;" class="boxes" id="locationDiv">
+                        <input type="checkbox" id="box-3-1">
+                        <label for="box-3-1">Law Gate</label>
+
+                        <input type="checkbox" id="box-3-2">
+                        <label for="box-3-2">Phagwara</label>
+
+                        <input type="checkbox" id="box-3-3">
+                        <label for="box-3-3">Rama Mandi</label>
+                    </div>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="myFunction('airDiv')">
+                            <svg height="512" viewBox="0 0 16 16" width="512" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" class="fa-secondary"
+                                    d="m14.2847 4.73291c-.586426-.525879-1.28516-.770508-2.02441-.711426-.481811.0396118-1.07214.274841-1.63989.61969.800293-1.17407 1.39429-2.40759 1.39429-3.04254 0-.350098-.137695-.668945-.397461-.921875-.631348-.614746-1.7998-.676758-2.44922-.661621-1.36523.0361329-3.34717.51123-4.44043 1.72998-.525396.585449-.770996 1.28467-.710449 2.02197.0394898.47998.27356 1.06757.616699 1.63336-1.17126-.797058-2.3999-1.38776-3.0332-1.38776-.350098 0-.668945.137695-.921875.397461-.615234.631836-.678711 1.80566-.661621 2.44922.0361328 1.36523.51123 3.34717 1.72998 4.44043.527344.473145 1.14697.719238 1.80322.719238.0727539 0 .145508-.0029297.21875-.0087891.481872-.0396118 1.0722-.275085 1.64001-.620483-.797058 1.17242-1.38806 2.40302-1.38806 3.03699 0 .350098.137695.669434.397949.922852.577148.562012 1.60693.662598 2.26953.662598.0620117 0 .120605-.0004883.175293-.0019531 1.36133-.0361328 3.33837-.510254 4.43066-1.72754.525879-.586426.771484-1.28613.711426-2.02441-.0397949-.483704-.276306-1.07672-.623413-1.64655 1.17523.800293 2.41058 1.39459 3.04626 1.39459.350098 0 .669434-.137695.922852-.397949.614258-.630859.677734-1.80273.660645-2.44482-.0361328-1.36133-.510254-3.33838-1.72754-4.43066zm-6.27002 5.77979c-1.38074 0-2.5-1.11932-2.5-2.5 0-1.38074 1.11926-2.5 2.5-2.5s2.5 1.11926 2.5 2.5c0 1.38068-1.11926 2.5-2.5 2.5z"
+                                    transform="translate(-.015 -.013)" />
+                                <path fill="currentColor" class="fa-primary"
+                                    d="m1.80474.390524c.390524.390524.390524 1.02369 0 1.41421-.390524.390524-1.02369.390524-1.41421 0-.390524-.390524-.390524-1.02369 0-1.41421.390524-.390524 1.02369-.390524 1.41421 0"
+                                    transform="translate(6.902 6.902)" />
+                            </svg>
+                            <span class="link-text">Cooling Type</span>
+                            <span id="airDivA" class="darrow">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 49.656 49.656" style="enable-background:new 0 0 49.656 49.656;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <polygon fill="currentColor" class="fa-primary"
+                                            points="1.414,14.535 4.242,11.707 24.828,32.292 45.414,11.707 48.242,14.535 24.828,37.95 	" />
+                                        <path fill="currentColor" class="fa-primary" d="M24.828,39.364L0,14.536l4.242-4.242l20.586,20.585l20.586-20.586l4.242,4.242L24.828,39.364z
+                        M2.828,14.536l22,22l22-22.001l-1.414-1.414L24.828,33.707L4.242,13.122L2.828,14.536z" />
+                                    </g>
+                                </svg>
+
+                            </span>
+                        </a>
+                    </li>
+                    <div style="display: none;" class="boxes" id="airDiv">
+                        <input type="checkbox" id="box-4-1">
+                        <label for="box-4-1">Air Cooler</label>
+
+                        <input type="checkbox" id="box-4-2">
+                        <label for="box-4-2">Air Conditioned</label>
+                    </div>
+                </ul>
+            </nav>
         </div>
-        
+
         <section class="homes">
             <div class="home">
                 <img src="/roomlist/img/house-1.jpeg" alt="House 1" class="home__img">
@@ -256,7 +283,7 @@
                 <button class="btn home__btn">Contact realtor</button>
             </div>
 
-            
+
             <div class="home">
                 <img src="/roomlist/img/house-2.jpeg" alt="House 2" class="home__img">
                 <svg class="home__like">
@@ -424,9 +451,10 @@
         </section>
 
     </div>
-       
 
-       
-        <script src="/roomlist/js/navAnimation.js"></script>
-    </body>
+
+
+    <script src="/roomlist/js/navAnimation.js"></script>
+</body>
+
 </html>

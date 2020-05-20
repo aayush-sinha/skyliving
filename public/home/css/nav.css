@@ -7,45 +7,6 @@
   --transition-speed: 600ms;
 }
 
-
-body::-webkit-scrollbar {
-  width: 0.4rem;
-}
-
-body::-webkit-scrollbar-track {
-  background: #1e1e24;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #c69963;
-}
-
-
-.navbar::-webkit-scrollbar {
-    width: 0rem;
-  }
-  
-.navbar::-webkit-scrollbar-track {
-    background: #1e1e24;
-  }
-  
-.navbar::-webkit-scrollbar-thumb {
-    background: #1e1e24;
-  }
-  
-
-.navbar::-webkit-scrollbar:horizontal {
-    width: 0rem;
-    height: 0rem;
-  }
-  
-.navbar::-webkit-scrollbar-track:horizontal {
-    background: #1e1e24;
-  }
-  
-.navbar::-webkit-scrollbar-thumb:horizontal {
-    background: #1e1e24;
-  }
   
 
 

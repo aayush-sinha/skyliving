@@ -4,16 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/png" href="/room/img/favicon.png">
+
+  <link rel="shortcut icon" type="image/png" href="/roomlist/img/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="/general/css/scroll.css">
+  <link rel="stylesheet" href="/contact/css/sweetalert2.css">
+  <!-- <link rel="stylesheet" href="/contact/css/sweetalert2custom.css"> -->
   <link rel="stylesheet" href="/room/css/reset.css">
   <link rel="stylesheet" href="/room/css/price.css">
   <link rel="stylesheet" href="/room/css/style.css">
-  <script src="js/modernizr.js"></script> <!-- Modernizr -->
+  <script src="/room/js/modernizr.js"></script> <!-- Modernizr -->
 
 
 
-  <title>trillo &mdash; Your all-in-one booking app</title>
+  <title>SkyLivings &mdash; Your all-in-one booking app</title>
 </head>
 
 <body>
@@ -39,7 +43,7 @@
 
         <div class="overview">
           <h1 class="overview__heading">
-            Sikand PG
+            <%= room.propName %>
           </h1>
 
           <div class="overview__stars">
@@ -62,7 +66,7 @@
 
           <div class="overview__location">
             <svg class="overview__icon-location">
-              <use xlink:href="img/sprite.svg#icon-location-pin"></use>
+              <use xlink:href="/room/img/sprite.svg#icon-location-pin"></use>
             </svg>
             <button class="btn-inline">Law Gate</button>
           </div>
@@ -104,7 +108,7 @@
 
 
                     <footer class="cd-pricing-footer">
-                      <a class="cd-select" href="#">Select</a>
+                      <a class="cd-select" href="#" onclick="popup();">Select</a>
                     </footer> <!-- .cd-pricing-footer -->
                   </li>
 
@@ -122,7 +126,7 @@
 
 
                     <footer class="cd-pricing-footer">
-                      <a class="cd-select" href="#">Select</a>
+                      <a class="cd-select" href="#" onclick="popup();">Select</a>
                     </footer> <!-- .cd-pricing-footer -->
                   </li>
                 </ul> <!-- .cd-pricing-wrapper -->
@@ -143,7 +147,7 @@
 
 
                     <footer class="cd-pricing-footer">
-                      <a class="cd-select" href="#">Select</a>
+                      <a class="cd-select" href="#" onclick="popup();">Select</a>
                     </footer> <!-- .cd-pricing-footer -->
                   </li>
 
@@ -161,7 +165,7 @@
 
 
                     <footer class="cd-pricing-footer">
-                      <a class="cd-select" href="#">Select</a>
+                      <a class="cd-select" href="#" onclick="popup();">Select</a>
                     </footer> <!-- .cd-pricing-footer -->
                   </li>
                 </ul>
@@ -183,7 +187,7 @@
 
 
                     <footer class="cd-pricing-footer">
-                      <a class="cd-select" href="#">Select</a>
+                      <a class="cd-select" href="#" onclick="popup();">Select</a>
                     </footer> <!-- .cd-pricing-footer -->
                   </li>
 
@@ -201,7 +205,7 @@
 
 
                     <footer class="cd-pricing-footer">
-                      <a class="cd-select" href="#">Select</a>
+                      <a class="cd-select" href="#" onclick="popup();">Select</a>
                     </footer> <!-- .cd-pricing-footer -->
                   </li>
                 </ul> <!-- .cd-pricing-wrapper -->
@@ -260,6 +264,7 @@
       </main>
     </div>
   </div>
+
   <script>
     function initMap() {
       // Map options
@@ -346,8 +351,11 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbMWG-1LdPk_BZVkvByj4I-faWDKU8Db0&callback=initMap">
     </script>
+  <script src="/room/js/sweetalert2.min.js"></script>
+  <script src="/room/js/popup.js"></script>
   <script src="/room/js/jquery-2.1.1.js"></script>
   <script src="/room/js/main.js"></script>
+  <script></script>
 </body>
 
 </html>

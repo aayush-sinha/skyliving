@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+  <link rel="stylesheet" href="/general/css/scroll.css">
   <link rel="stylesheet" href="/home/css/preloader.css">
   <link rel="stylesheet" href="/home/css/style.css">
   <link rel="stylesheet" href="/home/css/nav.css">
@@ -45,7 +46,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/contact" class="nav-link">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001"
                 style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
@@ -89,7 +90,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="/admin" class="nav-link">
+            <a href="/admin/login" class="nav-link">
               <svg height="512pt" viewBox="0 -11 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
                 <path class="fa-secondary"
                   d="m288 378.667969c0-28.800781 17.644531-53.527344 42.667969-64v-5.335938c0-12.96875 3.132812-25.128906 8.339843-36.160156-16.128906-10.816406-35.5-17.171875-56.339843-17.171875h-181.335938c-55.871093 0-101.332031 45.460938-101.332031 101.332031v74.667969c0 8.832031 7.167969 16 16 16h272zm0 0"
@@ -288,12 +289,12 @@
           </svg>
           <p><%= feature.propPrice %> </p>
         </div>
-        <button onclick="location.href='/room'" class="btn home__btn">View Detail</button>
+        <button onclick="location.href='/rooms/<%= feature._id %>'" class="btn home__btn">View Detail</button>
       </div>
 
       <% }); %>
       <div class="container1">
-        <button onclick="location.href='/roomlist'" class="button1 learn-more">
+        <button onclick="location.href='/rooms?page=1&limit=12'" class="button1 learn-more">
           <span class="circle" aria-hidden="true">
             <span class="icon arrow"></span>
           </span>

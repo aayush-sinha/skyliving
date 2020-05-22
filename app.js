@@ -1,14 +1,13 @@
 var express = require("express"),
   bodyParser = require("body-parser"),
   multer = require("multer"),
-  mongoose = require("mongoose");
-passport = require("passport"),
+  mongoose = require("mongoose"),
+  passport = require("passport"),
   LocalStrategy = require("passport-local"),
-  AdminUser = require("./models/adminUser")
+  AdminUser = require("./models/adminUser"),
+  Room = require("./models/rooms"),
+  Query = require("./models/query");
 // alertify = require("alertifyjs");
-
-
-
 
 //App Setting
 var app = express();
@@ -18,8 +17,7 @@ app.set("view engine", "ejs");
 const PORT = process.env.PORT || 3000;
 const upload = multer({ dest: __dirname + "/public/uploads/images" });
 
-
-//password config
+//passport config
 app.use(require("express-session")({
   secret: "Skylivings is best website!",
   resave: false,
@@ -33,7 +31,7 @@ passport.serializeUser(AdminUser.serializeUser());
 passport.deserializeUser(AdminUser.deserializeUser());
 
 
-// mongoose.set("useNewUrlParser", true);
+//Database Connection
 mongoose.set("useUnifiedTopology", true);
 // mongoose.connect("mongodb://localhost/skytest");
 mongoose.connect('mongodb+srv://skylivingweb:Felix2020@@cluster0-jgx9s.mongodb.net/test?retryWrites=true&w=majority', {
@@ -45,49 +43,6 @@ mongoose.connect('mongodb+srv://skylivingweb:Felix2020@@cluster0-jgx9s.mongodb.n
   console.log('ERROR:', err.message);
 });
 
-
-// ########################################################
-// ##
-// ##                 Room Schema
-// ##
-// ########################################################
-
-
-var roomSchema = new mongoose.Schema({
-  propName: String,
-  propLocation: String,
-  propAddress: String,
-  propSize: Number,
-  propLat: Number,
-  propLong: Number,
-  propRooms: Number,
-  propOccupancy: Array,
-  propCooling: Array,
-  propPrice: Array,
-  propImgExt: String,
-  propImg1: String,
-  propImag2: String,
-  propImg3: String,
-  propFeatures: Array,
-  propDate: { type: Date, default: Date.now },
-});
-var Room = mongoose.model("Room", roomSchema);
-
-
-// ########################################################
-// ##
-// ##                 Query Schema
-// ##
-// ########################################################
-
-
-var querySchema = new mongoose.Schema({
-  queryName: String,
-  queryPhone: Number,
-  queryMessage: String,
-  queryDate: { type: Date, default: Date.now },
-});
-var Query = mongoose.model("Query", querySchema);
 
 Room.countDocuments({}, function (err, count) {
   if (err) {

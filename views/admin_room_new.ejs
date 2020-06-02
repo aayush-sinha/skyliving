@@ -50,32 +50,60 @@
         </div>
         <h4 style="margin-top: 20px;">Price Categories</h4>
         <div id="priceCategories" style="margin-bottom: 20px;">
-            <div class="row border border-info">
-                <div class="form-group col">
-                    <label for="propOccupancy">Occupancy Type</label>
-                    <select class="form-control" id="propOccupancy" name="propOccupancy">
-                        <option>1 seater</option>
-                        <option>2 seater</option>
-                        <option>3 seater</option>
-                    </select>
-                </div>
-                <div class="form-group col">
-                    <label for="propCooling">Cooling Type</label>
-                    <select class="form-control" id="propCooling" name="propCooling">
-                        <option>AC</option>
-                        <option>Non AC</option>
-                    </select>
-                </div>
-                <div class="form-group col">
-                    <label for="propPrice">Price:</label>
-                    <input type="text" class="form-control" id="propPrice" placeholder="Enter Price" name="propPrice"
-                        required />
-                </div>
+            <div class="border border-info">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="propPrice">Price AC Single:</label>
+                        <input type="text" class="form-control" id="propPrice" placeholder="Enter Price AC Single"
+                            name="propPriceA1" required />
+                    </div>
+                    <div class="form-group col">
+                        <label for="propPrice">Price AC Double:</label>
+                        <input type="text" class="form-control" id="propPrice" placeholder="Enter Price AC Double"
+                            name="propPriceA2" required />
+                    </div>
+                    <div class="form-group col">
+                        <label for="propPrice">Price AC Triple:</label>
+                        <input type="text" class="form-control" id="propPrice" placeholder="Enter Price AC Triple"
+                            name="propPriceA3" required />
+                    </div>
 
-                <div class="btn-group mr-2">
+                    <!-- <div class="btn-group mr-2">
                     <button type="button" class="btn btn-primary" id="addButton" onclick="addHandler()">
                         +
                     </button>
+                </div> -->
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="propPrice">Price Non-AC Single:</label>
+                        <input type="text" class="form-control" id="propPrice" placeholder="Enter Price Non-AC Single"
+                            name="propPriceNA1" required />
+                    </div>
+                    <div class="form-group col">
+                        <label for="propPrice">Price Non-AC Double:</label>
+                        <input type="text" class="form-control" id="propPrice" placeholder="Enter Price Non-AC Double"
+                            name="propPriceNA2" required />
+                    </div>
+                    <div class="form-group col">
+                        <label for="propPrice">Price Non-AC Triple:</label>
+                        <input type="text" class="form-control" id="propPrice" placeholder="Enter Price Non-AC Triple"
+                            name="propPriceNA3" required />
+                    </div>
+
+                    <!-- <div class="btn-group mr-2">
+                    <button type="button" class="btn btn-primary" id="addButton" onclick="addHandler()">
+                        +
+                    </button>
+                </div> -->
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="propPrice">Display Price (Starting price for this PG):</label>
+                        <input type="text" class="form-control" id="propPrice" placeholder="Display Price"
+                            name="propPriceDisplay" required />
+                    </div>
+
                 </div>
             </div>
         </div>

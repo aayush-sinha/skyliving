@@ -14,7 +14,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const upload = multer({ dest: __dirname + "/public/uploads/images" });
 
 //passport config
@@ -97,7 +97,17 @@ app.get("/autocomplete", function (req, res, next) {
   });
 });
 
-app.get('/rooms', paginatedResults(Room), (req, res) => {
+app.get('/rooms', paginatedResults(Room, { propDate: 1 }), (req, res) => {
+  let room = res.paginatedResults.results
+  res.render("roomlist", { normal: room })
+})
+
+app.get('/roomlist/asc', paginatedResults(Room, { propPriceDisplay: 'ascending' }), (req, res) => {
+  let room = res.paginatedResults.results
+  res.render("roomlist", { normal: room })
+})
+
+app.get('/roomlist/desc', paginatedResults(Room, { propPriceDisplay: 'descending' }), (req, res) => {
   let room = res.paginatedResults.results
   res.render("roomlist", { normal: room })
 })
@@ -185,9 +195,15 @@ app.post("/createRooms", upload.fields([
     propLat: req.body.propLat,
     propLong: req.body.propLong,
     propRooms: req.body.propRooms,
-    propOccupancy: req.body.propOccupancy,
-    propCooling: req.body.propCooling,
-    propPrice: req.body.propPrice,
+    // propOccupancy: req.body.propOccupancy,
+    // propCooling: req.body.propCooling,
+    propPriceA1: req.body.propPriceA1,
+    propPriceA2: req.body.propPriceA2,
+    propPriceA3: req.body.propPriceA3,
+    propPriceNA1: req.body.propPriceNA1,
+    propPriceNA2: req.body.propPriceNA2,
+    propPriceNA3: req.body.propPriceNA3,
+    propPriceDisplay: req.body.propPriceDisplay,
     propImgExt: req.files.propImgExt[0].filename,
     propImg1: req.files.propImg1[0].filename,
     propImag2: req.files.propImg2[0].filename,
@@ -202,7 +218,7 @@ app.get("/contact", function (req, res) {
   res.render("contact")
 });
 
-function paginatedResults(model) {
+function paginatedResults(model, sorting) {
   return async (req, res, next) => {
     const page = parseInt(req.query.page)
     const limit = parseInt(req.query.limit)
@@ -226,7 +242,7 @@ function paginatedResults(model) {
       }
     }
     try {
-      results.results = await model.find().limit(limit).skip(startIndex).exec()
+      results.results = await model.find().sort(sorting).limit(limit).skip(startIndex).exec()
       res.paginatedResults = results
       next()
     } catch (e) {

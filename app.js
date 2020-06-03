@@ -2,11 +2,13 @@ var express = require("express"),
   bodyParser = require("body-parser"),
   multer = require("multer"),
   mongoose = require("mongoose"),
+  flash = require("connect-flash"),
   passport = require("passport"),
   LocalStrategy = require("passport-local"),
   AdminUser = require("./models/adminUser"),
   Room = require("./models/rooms"),
   Query = require("./models/query");
+middleware = require("./middleware");
 // alertify = require("alertifyjs");
 
 //App Setting
@@ -14,8 +16,10 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.use(flash());
 const PORT = process.env.PORT || 5000;
 const upload = multer({ dest: __dirname + "/public/uploads/images" });
+
 
 //passport config
 app.use(require("express-session")({
@@ -30,7 +34,12 @@ passport.use(new LocalStrategy(AdminUser.authenticate()));
 passport.serializeUser(AdminUser.serializeUser());
 passport.deserializeUser(AdminUser.deserializeUser());
 
+app.use(function (req, res, next) {
 
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
+  next();
+});
 //Database Connection
 mongoose.set("useUnifiedTopology", true);
 // mongoose.connect("mongodb://localhost/skytest");
@@ -119,28 +128,28 @@ app.post("/query", function (req, res) {
     queryMessage: req.body.queryMessage,
     propFeatures: req.body.propFeatures
   });
-  res.render("admin_room_new", { topbarHeading: "Add New Property" })
+  res.render("contact")
 });
 
 
 //**************** Admin Routes ********************
 
-app.get("/admin/register", function (req, res) {
-  res.render("admin_register");
-});
+// app.get("/admin/register", function (req, res) {
+//   res.render("admin_register");
+// });
 
-app.post("/admin/register", function (req, res) {
-  var adminUser = new AdminUser({ username: req.body.username });
-  AdminUser.register(adminUser, req.body.password, function (err, user) {
-    if (err) {
-      console.log(err);
-      return res.render("admin_register");
-    }
-    passport.authenticate("local")(req, res, function () {
-      res.redirect("/admin/home");
-    });
-  });
-});
+// app.post("/admin/register", function (req, res) {
+//   var adminUser = new AdminUser({ username: req.body.username });
+//   AdminUser.register(adminUser, req.body.password, function (err, user) {
+//     if (err) {
+//       console.log(err);
+//       return res.render("admin_register");
+//     }
+//     passport.authenticate("local")(req, res, function () {
+//       res.redirect("/admin/home");
+//     });
+//   });
+// });
 
 app.get("/admin/login", function (req, res) {
   res.render("admin_login");
@@ -160,11 +169,11 @@ app.get("/admin/logout", function (req, res) {
 
 
 //Admin home Route
-app.get("/admin", function (req, res) {
+app.get("/admin", middleware.isLoggedIn, function (req, res) {
   res.render("admin_home", { topbarHeading: "Dashboard", roomCount: total });
 });
 //Index Rooms
-app.get("/admin/rooms", function (req, res) {
+app.get("/admin/rooms", middleware.isLoggedIn, function (req, res) {
   Room.find({}, function (err, room) {
     if (err) {
       console.log(err);
@@ -177,7 +186,7 @@ app.get("/admin/rooms", function (req, res) {
 
 // New Route
 
-app.get("/admin/rooms/new", function (req, res) {
+app.get("/admin/rooms/new", middleware.isLoggedIn, function (req, res) {
   res.render("admin_room_new", { topbarHeading: "Add New Property" });
 });
 

@@ -17,6 +17,26 @@
 </head>
 
 <body>
+  <div class="row text-center">
+    <% if(error && error.length > 0){ %>
+    <div>
+      <button class="button large round success" onclick="succ()">Success notification
+        <%= error %>
+      </button>
+    </div>
+    <% } %>
+    <% if(error && error.length > 0){ %>
+    <div>
+      <button class="button large round success" onclick="err()">Success notification
+        <%= error %>
+      </button>
+    </div>
+    <% } %>
+
+  </div>
+
+
+  </div>
   <div class="loading-screen">
     <div class="loading-animation">
       <img src="home/img/logo.png" alt="" class="logo-loader">
